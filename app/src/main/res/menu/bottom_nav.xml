@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:title="Home"
+        android:id="@+id/home"
+        android:enabled="true"
+        android:icon="@drawable/home_icon"/>
+    <item
+        android:title="Films"
+        android:id="@+id/films"
+        android:icon="@drawable/films_icon"/>
+    <item
+        android:title="Favorite"
+        android:id="@+id/heart"
+        android:icon="@drawable/heart_icon"/>
+    <item
+        android:title="Profile"
+        android:id="@+id/profile"
+        android:icon="@drawable/user_icon"/>
+</menu>
