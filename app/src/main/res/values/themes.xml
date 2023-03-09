@@ -39,4 +39,18 @@
         <item name="android:textSize">18sp</item>
         <item name="android:paddingTop">20dp</item>
     </style>
+
+    <style name="HeadingMoviesText" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/roboto_mono_bold</item>
+        <item name="android:textColor">@color/concrete</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:paddingTop">-5dp</item>
+    </style>
+
+    <style name="GenreText" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/accent_light</item>
+        <item name="android:textStyle">bold</item>
+        <item name="fontFamily">@font/roboto_mono</item>
+    </style>
 </resources>
