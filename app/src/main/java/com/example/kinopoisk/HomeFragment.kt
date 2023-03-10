@@ -7,11 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kinopoisk.business.model.CategoriesListModel
+import com.example.kinopoisk.business.model.CategoriesModel
+import com.example.kinopoisk.business.model.NameData
 import com.example.kinopoisk.databinding.FragmentHomeBinding
+import com.example.kinopoisk.view.HomeView
 import com.example.kinopoisk.view.adapter.CategoriesAdapter
 import com.example.kinopoisk.view.adapter.NewMoviesAdapter
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(), HomeView {
     private var _binding : FragmentHomeBinding? = null
     private val binding get() = _binding!!
     private val data = ArrayList<CategoriesListModel>()
@@ -60,4 +63,24 @@ class HomeFragment : Fragment() {
         data.add(CategoriesListModel(R.drawable.fantastic, "Фантастика"))
         data.add(CategoriesListModel(R.drawable.fantasy, "Фэнтези"))
     }
+
+    //-------------moxy-------------
+
+    override fun displayCurrentData(data: NameData) {
+        binding.tvName.text = "Лера"
+    }
+
+    override fun displayCategoriesData(data: List<CategoriesListModel>) {
+        (binding.categoriesList.adapter as CategoriesAdapter)
+    }
+
+    override fun displayNewMoviesData(data: List<CategoriesModel>) {
+        (binding.newMoviesList.adapter as NewMoviesAdapter).updateData(data)
+    }
+
+    override fun displayError(error: Throwable) {
+
+    }
+
+    //-------------moxy-------------
 }
