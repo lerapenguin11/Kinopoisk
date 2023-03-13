@@ -53,4 +53,11 @@
         <item name="android:textStyle">bold</item>
         <item name="fontFamily">@font/roboto_mono</item>
     </style>
+
+    <style name="RecommendationsHeadingMoviesText" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/roboto_mono_bold</item>
+        <item name="android:textColor">@color/concrete</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:paddingTop">-5dp</item>
+    </style>
 </resources>

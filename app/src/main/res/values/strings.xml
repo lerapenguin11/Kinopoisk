@@ -10,4 +10,5 @@
     <string name="all">Все</string>
     <string name="defolt_categories">Романтика</string>
     <string name="new_movies">Новинки</string>
+    <string name="recommendations">Рекомендации</string>
 </resources>
