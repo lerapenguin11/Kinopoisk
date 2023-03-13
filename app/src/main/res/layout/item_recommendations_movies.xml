@@ -27,7 +27,7 @@
             app:cardPreventCornerOverlap="false">
 
             <ImageView
-                android:id="@+id/poster_new_movies"
+                android:id="@+id/poster_rec_movies"
                 android:layout_width="170dp"
                 android:layout_height="250dp"
                 android:scaleType="fitXY"
@@ -37,35 +37,35 @@
 
 
     <TextView
-        android:id="@+id/tv_name_movies"
+        android:id="@+id/tv_name_rec_movies"
         style="@style/RecommendationsHeadingMoviesText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="5dp"
-        app:layout_constraintEnd_toStartOf="@+id/imageView"
+        app:layout_constraintEnd_toStartOf="@+id/iv_star"
         app:layout_constraintStart_toStartOf="@+id/cardView"
         app:layout_constraintTop_toBottomOf="@+id/cardView"
         tools:text="Офис" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/iv_star"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="5dp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView2"
-        app:layout_constraintEnd_toStartOf="@+id/textView2"
-        app:layout_constraintTop_toTopOf="@+id/textView2"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_estimation"
+        app:layout_constraintEnd_toStartOf="@+id/tv_estimation"
+        app:layout_constraintTop_toTopOf="@+id/tv_estimation"
         app:srcCompat="@drawable/star" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tv_estimation"
         style="@style/GenreText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="10dp"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_name_movies"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_name_rec_movies"
         app:layout_constraintEnd_toEndOf="@+id/cardView"
-        app:layout_constraintTop_toTopOf="@+id/tv_name_movies"
+        app:layout_constraintTop_toTopOf="@+id/tv_name_rec_movies"
         tools:text="7.8" />
 </androidx.constraintlayout.widget.ConstraintLayout>
