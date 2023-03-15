@@ -13,6 +13,9 @@ import com.example.kinopoisk.view.adapter.RecommendationsAdapter
 class MoviesFragment : Fragment() {
     private var _binding : FragmentMoviesBinding? = null
     private val binding get() = _binding!!
+    private lateinit var recyclerView : RecyclerView
+    private lateinit var rvRecommendationsAdapter : RecommendationsAdapter
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -26,11 +29,12 @@ class MoviesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
-
         binding.recommendationsMoviesList.apply {
-            adapter = RecommendationsAdapter()
+            recyclerView = findViewById<View>(R.id.recommendations_movies_list) as RecyclerView
+            rvRecommendationsAdapter = RecommendationsAdapter()
             val layoutManager : RecyclerView.LayoutManager = GridLayoutManager(context, 2)
+            recyclerView!!.layoutManager = layoutManager
+            recyclerView!!.adapter = rvRecommendationsAdapter
 
         }
     }

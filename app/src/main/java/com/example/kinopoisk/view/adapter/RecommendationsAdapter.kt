@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import butterknife.BindView
+import butterknife.ButterKnife
 import com.example.kinopoisk.R
 import com.example.kinopoisk.business.model.CategoriesModel
 
@@ -35,9 +36,13 @@ class RecommendationsAdapter : BaseAdapter<CategoriesModel>() {
         @BindView(R.id.tv_estimation)
         lateinit var estimation : TextView
 
+        init {
+            ButterKnife.bind(this, itemView)
+        }
+
         override fun bindView(position: Int) {
             posterRecMovies.setImageResource(R.drawable.defolt_poster)
-            nameRecMovies.text = "fdgfgf"
+            nameRecMovies.text = "Офис"
             estimation.text = "8.1"
         }
 

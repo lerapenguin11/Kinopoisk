@@ -6,8 +6,9 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:background="@color/background"
-    android:paddingTop="20dp"
-    android:paddingEnd="25dp">
+    android:paddingEnd="15dp"
+    android:paddingStart="15dp"
+    android:paddingTop="20dp">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
