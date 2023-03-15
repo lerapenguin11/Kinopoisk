@@ -7,10 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.kinopoisk.business.model.CategoriesModel
 import com.example.kinopoisk.databinding.FragmentMoviesBinding
+import com.example.kinopoisk.view.MoviesView
+import com.example.kinopoisk.view.adapter.NewMoviesAdapter
 import com.example.kinopoisk.view.adapter.RecommendationsAdapter
 
-class MoviesFragment : Fragment() {
+class MoviesFragment : Fragment(), MoviesView {
     private var _binding : FragmentMoviesBinding? = null
     private val binding get() = _binding!!
     private lateinit var recyclerView : RecyclerView
@@ -39,4 +42,15 @@ class MoviesFragment : Fragment() {
         }
     }
 
+    //-------------moxy-------------
+
+    override fun displayRecommendationsMoviesData(data: List<CategoriesModel>) {
+        (binding.recommendationsMoviesList.adapter as RecommendationsAdapter).updateData(data)
+    }
+
+    override fun displayError(error: Throwable) {
+        TODO("Not yet implemented")
+    }
+
+    //-------------moxy-------------
 }
