@@ -70,10 +70,12 @@ class HomeFragment : Fragment(), HomeView {
         binding.tvName.text = "Лера"
     }
 
+    //TODO применить данные из интернета
     override fun displayCategoriesData(data: List<CategoriesListModel>) {
         (binding.categoriesList.adapter as CategoriesAdapter)
     }
 
+    //TODO применить данные из интернета
     override fun displayNewMoviesData(data: List<CategoriesModel>) {
         (binding.newMoviesList.adapter as NewMoviesAdapter).updateData(data)
     }

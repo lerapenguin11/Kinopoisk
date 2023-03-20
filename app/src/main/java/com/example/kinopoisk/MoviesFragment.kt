@@ -44,6 +44,7 @@ class MoviesFragment : Fragment(), MoviesView {
 
     //-------------moxy-------------
 
+    //TODO применить данные из интернета
     override fun displayRecommendationsMoviesData(data: List<CategoriesModel>) {
         (binding.recommendationsMoviesList.adapter as RecommendationsAdapter).updateData(data)
     }
