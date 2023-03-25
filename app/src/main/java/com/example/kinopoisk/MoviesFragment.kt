@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.kinopoisk.business.model.CategoriesModel
 import com.example.kinopoisk.databinding.FragmentMoviesBinding
 import com.example.kinopoisk.view.MoviesView
-import com.example.kinopoisk.view.adapter.NewMoviesAdapter
 import com.example.kinopoisk.view.adapter.RecommendationsAdapter
 
 class MoviesFragment : Fragment(), MoviesView {

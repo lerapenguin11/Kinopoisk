@@ -6,9 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.kinopoisk.business.api.ApiProvider
 import com.example.kinopoisk.business.model.CategoriesListModel
 import com.example.kinopoisk.business.model.CategoriesModel
-import com.example.kinopoisk.business.model.NameData
 import com.example.kinopoisk.databinding.FragmentHomeBinding
 import com.example.kinopoisk.view.HomeView
 import com.example.kinopoisk.view.adapter.CategoriesAdapter
@@ -27,6 +27,7 @@ class HomeFragment : Fragment(), HomeView {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
 
         initViews()
+
 
         return binding.root
     }
@@ -66,7 +67,7 @@ class HomeFragment : Fragment(), HomeView {
 
     //-------------moxy-------------
 
-    override fun displayCurrentData(data: NameData) {
+    override fun displayCurrentData(data: String) {
         binding.tvName.text = "Лера"
     }
 
@@ -76,8 +77,8 @@ class HomeFragment : Fragment(), HomeView {
     }
 
     //TODO применить данные из интернета
-    override fun displayNewMoviesData(data: List<CategoriesModel>) {
-        (binding.newMoviesList.adapter as NewMoviesAdapter).updateData(data)
+    override fun displayNewMoviesData(data: CategoriesModel) {
+        (binding.newMoviesList.adapter as NewMoviesAdapter)
     }
 
     override fun displayError(error: Throwable) {

@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import com.example.kinopoisk.business.api.ApiProvider
 import com.example.kinopoisk.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

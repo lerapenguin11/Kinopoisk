@@ -1,5 +1,6 @@
 package com.example.kinopoisk.business.api
 
+import okhttp3.Request
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
@@ -14,6 +15,4 @@ class ApiProvider {
         .addConverterFactory(GsonConverterFactory.create())
         .baseUrl(SERVER_URL)
         .build()
-
-    fun providerMoviesApi() : MoviesApi = kinopoisk.create(MoviesApi :: class.java)
 }

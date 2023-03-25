@@ -4,7 +4,7 @@ import com.example.kinopoisk.business.model.CategoriesModel
 import moxy.MvpView
 import moxy.viewstate.strategy.alias.AddToEndSingle
 
-interface MoviesView :MvpView {
+interface MoviesView : MvpView {
 
     @AddToEndSingle
     fun displayRecommendationsMoviesData(data : List<CategoriesModel>)
