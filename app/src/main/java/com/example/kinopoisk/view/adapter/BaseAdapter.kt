@@ -2,7 +2,9 @@ package com.example.kinopoisk.view.adapter
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import com.example.kinopoisk.business.model.CategoriesModel
+import com.example.kinopoisk.business.model.Poster
+import com.example.kinopoisk.business.modelView.Movies
+import com.example.kinopoisk.business.modelView.MoviesModel
 
 abstract class BaseAdapter<D> : RecyclerView.Adapter<BaseAdapter.BaseHolderView>() {
     private val _mData by lazy { mutableListOf<D>() }
@@ -14,8 +16,8 @@ abstract class BaseAdapter<D> : RecyclerView.Adapter<BaseAdapter.BaseHolderView>
 
     override fun getItemCount() = _mData.size
 
-    fun updateData(data: CategoriesModel){
-        if(_mData.isEmpty() && (data.isNotEmpty())){
+    fun updateData(data: List<D>){
+        if(_mData.isEmpty() && (_mData.isNotEmpty())){
             _mData.addAll(data)
         }
         else{

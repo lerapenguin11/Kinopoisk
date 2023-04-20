@@ -1,10 +1,10 @@
 package com.example.kinopoisk
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kinopoisk.business.model.CategoriesModel
@@ -17,6 +17,7 @@ class MoviesFragment : Fragment(), MoviesView {
     private val binding get() = _binding!!
     private lateinit var recyclerView : RecyclerView
     private lateinit var rvRecommendationsAdapter : RecommendationsAdapter
+    //private val homePresenter by moxyPresenter { HomePresenter() }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,8 +25,14 @@ class MoviesFragment : Fragment(), MoviesView {
     ): View? {
 
         _binding = FragmentMoviesBinding.inflate(inflater, container, false)
+        initRetrofit()
+
 
         return binding.root
+    }
+
+    private fun initRetrofit() {
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -45,7 +52,8 @@ class MoviesFragment : Fragment(), MoviesView {
 
     //TODO применить данные из интернета
     override fun displayRecommendationsMoviesData(data: List<CategoriesModel>) {
-        (binding.recommendationsMoviesList.adapter as RecommendationsAdapter).updateData(data)
+        (binding.recommendationsMoviesList.adapter as RecommendationsAdapter)
+            .updateData(data)
     }
 
     override fun displayError(error: Throwable) {

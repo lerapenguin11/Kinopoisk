@@ -1,27 +1,28 @@
 package com.example.kinopoisk.business.api
 
-import android.database.Observable
 import com.example.kinopoisk.business.model.CategoriesModel
+import com.example.kinopoisk.business.modelView.Movies
+import com.example.kinopoisk.business.modelView.MoviesModel
+import io.reactivex.rxjava3.core.Observable
+import retrofit2.Call
+import retrofit2.Response
 import retrofit2.http.GET
+import retrofit2.http.Headers
 import retrofit2.http.Query
 
 interface MoviesApi {
-    @GET("movie?")
+    @Headers("X-API-KEY: 0d0acf1c-fefe-4d18-a4f7-bec01b716469",
+        "Content-Type: application/json")
+    @GET("/api/v2.2/films/{id}")
     fun getMovies(
-        @Query("field") field : String = "year",
-        @Query("search") search : String = "2022-2023",
-        @Query("token") token : String = "VFA9TAW-4H94F2B-NSRGV52-JN7G2A3"
-    ) : Observable<CategoriesModel>
+    ) : Observable<List<Movies>>
 
-    /*field=rating.kp
-    &search=7-10
-    &field=year
-    &search=2017-2020
-    &field=typeNumber
-    &search=2
-    &sortField=year
-    &sortType=1
-    &sortField=votes.imdb
-    &sortType=-1
-    &token=ZQQ8GMN-TN54SGK-NB3MKEC-ZKB8V06*/
+    @Headers("X-API-KEY: 0d0acf1c-fefe-4d18-a4f7-bec01b716469")
+    @GET("/api/v2.2/films/top?type=TOP_100_POPULAR_FILMS")
+    fun getPopularMovie(): Call<MoviesModel>
+
+    @Headers("X-API-KEY: 0d0acf1c-fefe-4d18-a4f7-bec01b716469")
+    @GET("/api/v2.2/films/top?type=TOP_100_POPULAR_FILMS")
+    fun getPopularMovie2(): Observable<List<Movies>>
 }
+

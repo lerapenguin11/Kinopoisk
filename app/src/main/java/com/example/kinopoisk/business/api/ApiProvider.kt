@@ -1,18 +1,18 @@
 package com.example.kinopoisk.business.api
 
-import okhttp3.Request
+import com.example.kinopoisk.BASE_URL
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
-
 class ApiProvider {
 
-    private val kinopoisk : Retrofit by lazy { initApi() }
-    private val SERVER_URL : String = "https://api.kinopoisk.dev/"
+    val kinopoisk : Retrofit by lazy { initApi() }
 
-    private fun initApi() =  Retrofit.Builder ()
+    fun initApi() =  Retrofit.Builder ()
         .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
         .addConverterFactory(GsonConverterFactory.create())
-        .baseUrl(SERVER_URL)
+        .baseUrl(BASE_URL)
         .build()
+
+    fun providerMoviesApi() : MoviesApi = kinopoisk.create(MoviesApi :: class.java)
 }
