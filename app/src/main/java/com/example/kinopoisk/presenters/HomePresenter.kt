@@ -28,8 +28,8 @@ class HomePresenter(var mView : HomeView) : MvpPresenter<HomeView>() {
             response.error?.let{viewState.displayError(response.error)}
         }
 */
-        repo.reloadData(object : Callback<List<MoviesModel>>(){
-            override fun returnResult(t: List<MoviesModel>) {
+        repo.reloadData(object : Callback<List<Movies>>(){
+            override fun returnResult(t: List<Movies>) {
                 viewState.displayNewMoviesData(t)
             }
 
