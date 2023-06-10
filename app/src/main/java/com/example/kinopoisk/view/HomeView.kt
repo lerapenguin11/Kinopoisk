@@ -1,6 +1,7 @@
 package com.example.kinopoisk.view
 
-import com.example.kinopoisk.business.model.CategoriesListModel
+import com.example.kinopoisk.business.model.Doc
+import com.example.kinopoisk.business.modelView.CategoriesListModel
 import com.example.kinopoisk.business.modelView.Movies
 import com.example.kinopoisk.business.modelView.MoviesModel
 import moxy.MvpView
@@ -9,13 +10,10 @@ import moxy.viewstate.strategy.alias.AddToEndSingle
 interface HomeView : MvpView {
 
     @AddToEndSingle
-    fun displayCurrentData(data: String)
+    fun displayNewMoviesData(data: List<Doc>)
 
     @AddToEndSingle
-    fun displayCategoriesData(data : List<CategoriesListModel>)
-
-    @AddToEndSingle
-    fun displayNewMoviesData(data: List<Movies>)
+    fun displayPopularMoviesData(data: List<Doc>)
 
     @AddToEndSingle
     fun displayError(error : Throwable)

@@ -2,9 +2,6 @@ package com.example.kinopoisk.view.adapter
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import com.example.kinopoisk.business.model.Poster
-import com.example.kinopoisk.business.modelView.Movies
-import com.example.kinopoisk.business.modelView.MoviesModel
 
 abstract class BaseAdapter<D> : RecyclerView.Adapter<BaseAdapter.BaseHolderView>() {
     private val _mData by lazy { mutableListOf<D>() }

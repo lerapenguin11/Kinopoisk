@@ -9,6 +9,9 @@
     <string name="categories">Категории</string>
     <string name="all">Все</string>
     <string name="defolt_categories">Романтика</string>
-    <string name="new_movies">Новинки</string>
     <string name="recommendations">Рекомендации</string>
+    <string name="new_films">Новинки</string>
+    <string name="kinopoisk">Кинопоиск</string>
+    <string name="_10_imdb">/10 IMDb</string>
+    <string name="text_time">мин.</string>
 </resources>

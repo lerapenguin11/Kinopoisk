@@ -11,15 +11,11 @@ import com.example.kinopoisk.business.TEST.RetrofitClient
 import com.example.kinopoisk.business.api.MoviesApi
 import com.example.kinopoisk.business.modelView.Movies
 import com.example.kinopoisk.business.modelView.MoviesModel
-import com.example.kinopoisk.business.repos.TAG
 import com.example.kinopoisk.databinding.FragmentFavouritesBinding
-import com.example.kinopoisk.view.adapter.FavoriteAdapter
 import kotlinx.coroutines.DelicateCoroutinesApi
 import retrofit2.Call
 import retrofit2.Callback
-import retrofit2.HttpException
 import retrofit2.Response
-import java.io.IOException
 
 
 class FavouritesFragment : Fragment() {
@@ -42,26 +38,9 @@ class FavouritesFragment : Fragment() {
 
 
         val request = RetrofitClient.buildService(MoviesApi :: class.java)
-        val call = request.getPopularMovie()
+        val call = request.getNewMovie2()
 
-        call.enqueue(object : Callback<MoviesModel> {
-            override fun onResponse(call: Call<MoviesModel>, response: Response<MoviesModel>) {
-                if (response.isSuccessful && response != null){
-                    println("CODE: " + response.code().toString())
-                    binding.favoriteMoviesList.apply {
-                        layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-                        println(response.body().toString())
-                        adapter = FavoriteAdapter(response.body()!!.films)
 
-                    }
-                }
-            }
-
-            override fun onFailure(call: Call<MoviesModel>, t: Throwable) {
-                Log.d("FATAL", "не работает")
-            }
-
-        })
 
         return binding.root
     }

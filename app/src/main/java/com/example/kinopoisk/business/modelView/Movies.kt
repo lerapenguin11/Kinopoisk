@@ -13,10 +13,13 @@ data class Movies(
     val posterUrl: String?,
 
     @SerializedName("nameRu")
-    val nameRu: String?
+    val nameRu: String?,
+
+    @SerializedName("year")
+    val year: Int
 
 ) : Parcelable{
-    constructor() : this (0, "", "")
+    constructor() : this (0, "", "", 2022)
 }
 
 /*
@@ -61,6 +64,6 @@ data class Const(
     val startYear: Int,
     val type: String,
     val webUrl: String,
-    val year: Int
+
 )
 */

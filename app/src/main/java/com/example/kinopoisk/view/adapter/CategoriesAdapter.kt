@@ -10,7 +10,8 @@ import androidx.recyclerview.widget.RecyclerView
 import butterknife.BindView
 import butterknife.ButterKnife
 import com.example.kinopoisk.R
-import com.example.kinopoisk.business.model.CategoriesListModel
+import com.example.kinopoisk.business.modelView.CategoriesListModel
+
 
 class CategoriesAdapter(private val categoriesList : List<CategoriesListModel>)
     : RecyclerView.Adapter<CategoriesAdapter.CategoriesHolderView>() {

@@ -1,5 +1,5 @@
 package com.example.kinopoisk.business.model
 
 data class Logo(
-    val url: Any
+    val url: String
 )

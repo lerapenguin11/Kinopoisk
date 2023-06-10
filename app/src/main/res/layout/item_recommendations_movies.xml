@@ -10,7 +10,7 @@
     android:paddingStart="15dp"
     android:paddingTop="20dp">
 
-    <androidx.cardview.widget.CardView
+  <!--  <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="170dp"
         android:layout_height="250dp"
@@ -68,5 +68,5 @@
         app:layout_constraintBottom_toBottomOf="@+id/tv_name_rec_movies"
         app:layout_constraintEnd_toEndOf="@+id/cardView"
         app:layout_constraintTop_toTopOf="@+id/tv_name_rec_movies"
-        tools:text="7.8" />
+        tools:text="7.8" />-->
 </androidx.constraintlayout.widget.ConstraintLayout>
