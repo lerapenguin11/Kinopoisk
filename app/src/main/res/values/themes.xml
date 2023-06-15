@@ -74,4 +74,16 @@
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">12sp</item>
     </style>
+
+    <style name="TextFilterMovies" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/mulish_bold</item>
+        <item name="android:textColor">#88A4E8</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="TextCardMoviesBlack" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/mulish</item>
+        <item name="android:textColor">#AAA9B1</item>
+        <item name="android:textSize">12sp</item>
+    </style>
 </resources>

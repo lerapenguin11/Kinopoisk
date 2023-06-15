@@ -14,4 +14,12 @@
     <string name="kinopoisk">Кинопоиск</string>
     <string name="_10_imdb">/10 IMDb</string>
     <string name="text_time">мин.</string>
+    <string name="filter">Фильтры</string>
+    <string name="films">Фильмы</string>
+    <string name="series">Сериалы</string>
+    <string name="genre">Жанры:</string>
+    <string name="county">Страны:</string>
+    <string name="imdb">Рейтинг по IMDb:</string>
+    <string name="from">От:</string>
+    <string name="to">До:</string>
 </resources>

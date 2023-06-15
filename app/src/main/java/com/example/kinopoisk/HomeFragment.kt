@@ -1,10 +1,14 @@
 package com.example.kinopoisk
 
 import android.R
+import android.app.Dialog
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.Window
 import android.widget.ScrollView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -42,9 +46,24 @@ class HomeFragment : MvpAppCompatFragment(), HomeView {
         return binding.root
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        _binding = null
+
+    override fun onResume() {
+        super.onResume()
+        onClick()
+    }
+
+    private fun onClick() {
+        binding.btFilter.setOnClickListener {
+            sideFilter()
+        }
+    }
+
+    private fun sideFilter() {
+        val dialog = context?.let { Dialog(it) }
+        dialog?.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog?.setCancelable(false)
+
+        //dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
     }
 
     //-------------moxy-------------
