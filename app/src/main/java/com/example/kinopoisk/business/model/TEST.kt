@@ -5,5 +5,7 @@ data class TEST(
     val limit: Int,
     val page: Int,
     val pages: Int,
-    val total: Int
+    val total: Int,
+
+    val genres: List<Genre>
 )

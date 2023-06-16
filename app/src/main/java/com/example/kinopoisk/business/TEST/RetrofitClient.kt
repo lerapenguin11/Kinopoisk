@@ -1,6 +1,5 @@
 package com.example.kinopoisk.business.TEST
 
-import com.example.kinopoisk.API_KEY
 import com.example.kinopoisk.BASE_URL
 import com.example.kinopoisk.business.api.MoviesApi
 import okhttp3.Interceptor

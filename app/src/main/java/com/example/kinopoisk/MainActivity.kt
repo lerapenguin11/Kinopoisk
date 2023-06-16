@@ -4,11 +4,14 @@ import android.annotation.SuppressLint
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Window
+import android.view.View
 import android.view.WindowManager
 import androidx.fragment.app.Fragment
-import com.example.kinopoisk.business.api.ApiProvider
 import com.example.kinopoisk.databinding.ActivityMainBinding
+import com.example.kinopoisk.ui.FavouritesFragment
+import com.example.kinopoisk.ui.HomeFragment
+import com.example.kinopoisk.ui.MoviesFragment
+import com.example.kinopoisk.ui.ProfileFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,6 +20,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        APP_ACTIVITY = this
 
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT){
             window.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
@@ -33,11 +38,15 @@ class MainActivity : AppCompatActivity() {
                 R.id.heart -> replaceFragment(FavouritesFragment())
                 R.id.profile -> replaceFragment(ProfileFragment())
 
-                else ->{
-                }
+                else -> hideBottomNav()
             }
+
             true
         }
+    }
+
+    private fun hideBottomNav() {
+        binding.bottomNavigationView.visibility = View.GONE
     }
 
     @SuppressLint("CommitTransaction")

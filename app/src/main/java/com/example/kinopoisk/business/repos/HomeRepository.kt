@@ -14,8 +14,6 @@ import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.observers.DisposableObserver
 import io.reactivex.rxjava3.schedulers.Schedulers
 
-const val TAG = "HOME_REPO"
-
 class HomeRepository(api : ApiProvider) : BaseRepository<HomeRepository.ServerResponse>(api)  {
 
     @SuppressLint("CheckResult")

@@ -1,7 +1,6 @@
-package com.example.kinopoisk
+package com.example.kinopoisk.ui
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,12 +9,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kinopoisk.business.TEST.RetrofitClient
 import com.example.kinopoisk.business.api.MoviesApi
 import com.example.kinopoisk.business.modelView.Movies
-import com.example.kinopoisk.business.modelView.MoviesModel
 import com.example.kinopoisk.databinding.FragmentFavouritesBinding
 import kotlinx.coroutines.DelicateCoroutinesApi
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 
 class FavouritesFragment : Fragment() {

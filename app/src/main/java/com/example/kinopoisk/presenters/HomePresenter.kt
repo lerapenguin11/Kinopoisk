@@ -26,14 +26,11 @@ class HomePresenter(var mView : HomeView) : MvpPresenter<HomeView>() {
         repo.reloadData(object : Callback<List<Doc>>(){
             override fun returnResult(t: List<Doc>) {
                 viewState.displayNewMoviesData(t)
-
             }
 
             override fun returnError(error: Throwable) {
                 viewState.displayError(error)
             }
-
-
         })
 
         repo.reloadDataPopular(object : Callback<List<Doc>>(){

@@ -8,7 +8,7 @@
     android:background="@color/background"
     android:paddingStart="20dp"
     android:paddingEnd="20dp"
-    tools:context=".MoviesFragment">
+    tools:context=".ui.MoviesFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"

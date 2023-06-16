@@ -1,6 +1,7 @@
-package com.example.kinopoisk
+package com.example.kinopoisk.ui
 
 import android.R
+import android.app.AlertDialog
 import android.app.Dialog
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
@@ -8,18 +9,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.Window
-import android.widget.ScrollView
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import com.example.kinopoisk.FiltersFragment
 import com.example.kinopoisk.business.model.Doc
-import com.example.kinopoisk.business.modelView.CategoriesListModel
-import com.example.kinopoisk.business.modelView.Movies
-import com.example.kinopoisk.business.modelView.MoviesModel
 import com.example.kinopoisk.databinding.FragmentHomeBinding
 import com.example.kinopoisk.presenters.HomePresenter
+import com.example.kinopoisk.utilits.replaceFragment
 import com.example.kinopoisk.view.HomeView
-import com.example.kinopoisk.view.adapter.CategoriesAdapter
 import com.example.kinopoisk.view.adapter.NewMoviesAdapter
 import com.example.kinopoisk.view.adapter.PopularAdapter
 import moxy.MvpAppCompatFragment
@@ -32,7 +27,6 @@ class HomeFragment : MvpAppCompatFragment(), HomeView {
     private val homePresenter by moxyPresenter { HomePresenter(this) }
     private lateinit var adapterNew: NewMoviesAdapter
     private lateinit var adapterPopular : PopularAdapter
-    private val list = ArrayList<Doc>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -54,16 +48,8 @@ class HomeFragment : MvpAppCompatFragment(), HomeView {
 
     private fun onClick() {
         binding.btFilter.setOnClickListener {
-            sideFilter()
+            replaceFragment(FiltersFragment())
         }
-    }
-
-    private fun sideFilter() {
-        val dialog = context?.let { Dialog(it) }
-        dialog?.requestWindowFeature(Window.FEATURE_NO_TITLE)
-        dialog?.setCancelable(false)
-
-        //dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
     }
 
     //-------------moxy-------------
@@ -92,6 +78,5 @@ class HomeFragment : MvpAppCompatFragment(), HomeView {
         }
         homePresenter.enable()*/
     }
-
     //-------------moxy-------------
 }
