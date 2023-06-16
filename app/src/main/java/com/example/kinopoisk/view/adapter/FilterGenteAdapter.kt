@@ -8,10 +8,8 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kinopoisk.R
 import com.example.kinopoisk.business.model.AllGenresItem
-import com.example.kinopoisk.business.model.Doc
-import com.example.kinopoisk.business.model.Genre
 
-class FilterTagAdapter(private val result : List<AllGenresItem>) : RecyclerView.Adapter<FilterTagAdapter.FilterViewHolder>() {
+class FilterGenteAdapter(private val result : List<AllGenresItem>) : RecyclerView.Adapter<FilterGenteAdapter.FilterViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FilterViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_filter_on_click, parent, false)

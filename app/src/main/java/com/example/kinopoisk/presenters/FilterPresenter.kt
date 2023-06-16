@@ -2,6 +2,7 @@ package com.example.kinopoisk.presenters
 
 import com.example.kinopoisk.business.TEST.Callback
 import com.example.kinopoisk.business.api.ApiProvider
+import com.example.kinopoisk.business.model.AllCountriesItem
 import com.example.kinopoisk.business.model.AllGenresItem
 import com.example.kinopoisk.business.model.Doc
 import com.example.kinopoisk.business.model.Genre
@@ -24,7 +25,15 @@ class FilterPresenter(var mView : FilterView) : MvpPresenter<FilterView>() {
                 viewState.displayError(error)
             }
         })
+
+        repo.reloadDataCountry(object  : Callback<List<AllCountriesItem>>(){
+            override fun returnResult(t: List<AllCountriesItem>) {
+                viewState.displayCountryData(t)
+            }
+
+            override fun returnError(error: Throwable) {
+                viewState.displayError(error)
+            }
+        })
     }
-
-
 }

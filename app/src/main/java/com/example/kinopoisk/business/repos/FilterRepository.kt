@@ -21,10 +21,29 @@ class FilterRepository(api : ApiProvider) : BaseRepository<FilterRepository>(api
                 }
 
                 override fun onError(e: Throwable) {
-                    Log.d("FILTER_REPO", "error: $e")
+                    Log.d("FILTER_REPO_GENRE", "error: $e")
                 }
 
                 override fun onComplete() {}
+            })
+    }
+
+    fun reloadDataCountry(callback: Callback<List<AllCountriesItem>>){
+        api.providerMoviesApi().getListCountry()
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(object : DisposableObserver<AllCountries>(){
+                override fun onNext(t: AllCountries) {
+                    callback.returnResult(t)
+                }
+
+                override fun onError(e: Throwable) {
+                    Log.d("FILTER_REPO_COUNTRY", "error: $e")
+                }
+
+                override fun onComplete() {
+
+                }
             })
     }
 }

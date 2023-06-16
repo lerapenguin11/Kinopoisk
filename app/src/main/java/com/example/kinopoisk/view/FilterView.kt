@@ -1,5 +1,6 @@
 package com.example.kinopoisk.view
 
+import com.example.kinopoisk.business.model.AllCountriesItem
 import com.example.kinopoisk.business.model.AllGenresItem
 import com.example.kinopoisk.business.model.Doc
 import com.example.kinopoisk.business.model.Genre
@@ -11,7 +12,7 @@ interface FilterView : MvpView {
     fun displayGenresData(data: List<AllGenresItem>)
 
     @AddToEndSingle
-    fun displayCountryData(data: List<Doc>)
+    fun displayCountryData(data: List<AllCountriesItem>)
 
     @AddToEndSingle
     fun displayError(error : Throwable)
